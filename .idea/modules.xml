@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/mapCreater.iml" filepath="$PROJECT_DIR$/mapCreater.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mapCreator.iml" filepath="$PROJECT_DIR$/mapCreator.iml" />
     </modules>
   </component>
 </project>
