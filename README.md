@@ -1,6 +1,6 @@
 # mapCreator
 This program is a tool to create a TXT map made up of 0 and 1.  
-You can draw in the window and generate the map.(Requied a **Image** in the background, **the default is a white picture**)  
+You can draw in the window and generate the map.(Require a **Image** in the background, **the default is a white picture**)  
 The output(xxx.txt) format is :  
 34  
 67  
