@@ -30,7 +30,8 @@ public class drawMapFrame extends JFrame {
         topPanel.init();
         add(topPanel,BorderLayout.NORTH);
         add(centerPanel,BorderLayout.CENTER);
-        setSize(1800,800);
+        setSize(1700,1000);
+
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null); //位于屏幕中央
 
@@ -48,7 +49,8 @@ public class drawMapFrame extends JFrame {
                 centerPanel.init();
                 System.out.println(imgPath);
                 add(centerPanel,BorderLayout.CENTER); //重新添加
-                revalidate(); //repaint不行
+                revalidate();
+                repaint(); //两个都要写，？？？why
             }
         });
 
@@ -63,6 +65,7 @@ public class drawMapFrame extends JFrame {
                 centerPanel.init();
                 add(centerPanel,BorderLayout.CENTER); //重新添加
                 revalidate();
+                repaint();
             }
         });
 
@@ -104,7 +107,6 @@ public class drawMapFrame extends JFrame {
 
         System.out.println(frame.centerPanel.getSize());
 
-        //centerpanel [width=1486,height=727]
     }
 
 }

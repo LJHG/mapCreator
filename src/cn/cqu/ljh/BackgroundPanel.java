@@ -18,11 +18,16 @@ public class BackgroundPanel extends JPanel {
     private char map[][];
     private boolean isPen;
 
+
+
     // 固定背景图片，允许这个JPanel可以在图片上添加其他组件
     protected void paintComponent(Graphics g) {
         if(image != null)
-            g.drawImage(image, 0, 0, this.getWidth(), this.getHeight(), this);
-
+        {
+            System.out.println(image.getHeight(null));
+            System.out.println(image.getWidth(null));
+            g.drawImage(image, 0, 0, image.getWidth(null), image.getHeight(null), null);
+        }
     }
     public BackgroundPanel(String imgpath){
 
@@ -51,9 +56,12 @@ public class BackgroundPanel extends JPanel {
 
     public void init() {
 
-
-        height = 800/cellSize;
-        width  = 1600/cellSize;
+        int heightPixels = image.getHeight(null);
+        int widthPixels = image.getWidth(null);
+//        System.out.println(heightPixels);
+//        System.out.println(widthPixels);
+        height = heightPixels/cellSize;
+        width  = widthPixels/cellSize;
         setLayout(null);
         grids = new Grid[width][height];
         map = new char[height][width];
@@ -124,9 +132,8 @@ public class BackgroundPanel extends JPanel {
                 else {
                     grids[x][y].setOpaque(false);
                     map[y][x] = '0';
-                    repaint();//效果不好,但没办法
                 }
-
+                grids[x][y].repaint();
             }
 
             @Override
@@ -163,9 +170,8 @@ public class BackgroundPanel extends JPanel {
                 else{
                     grids[x][y].setOpaque(false);
                     map[y][x] = '0';
-                    repaint();
                 }
-
+                grids[x][y].repaint();
             }
 
             @Override
